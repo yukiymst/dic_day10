@@ -3,12 +3,27 @@
   <head>
     <title>DicDay10</title>
     <%= csrf_meta_tags %>
+    
+    <meta name="viewport" content="width=device-width">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <ul>
+        <li><a href="/blogs">Blog presented by P</a></li>
+        <li><a href="/blogs/new">新規投稿</a></li>
+      </ul>
+    </header>
+    
     <%= yield %>
+    
+    <footer>
+      <p>Blog presented by P master</p>
+      <p>© 2018 PwC TAS 18BN</p>
+    </footer>
+
   </body>
 </html>
