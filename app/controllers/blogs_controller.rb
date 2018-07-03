@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :login_check, only: [:new, :edit, :show]
 
   # GET /blogs
   # GET /blogs.json
@@ -70,5 +71,11 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :content)
+    end
+    
+    def login_check
+      unless current_user
+        redirect_to new_session_path
+      end
     end
 end
