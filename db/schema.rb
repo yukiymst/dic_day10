@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180703083915) do
-=======
-ActiveRecord::Schema.define(version: 20180703083155) do
->>>>>>> d2bb2388efc07aacfe6e3f6e7cd3671634fbd7d3
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -27,13 +29,6 @@ ActiveRecord::Schema.define(version: 20180703083155) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-=======
-  create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> d2bb2388efc07aacfe6e3f6e7cd3671634fbd7d3
   end
 
 end
